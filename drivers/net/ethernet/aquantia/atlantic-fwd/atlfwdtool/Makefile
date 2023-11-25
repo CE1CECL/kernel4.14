@@ -27,7 +27,7 @@
 #
 ################################################################################
 
-CFLAGS+=-Wall -Werror -Wfatal-errors $(shell pkg-config --cflags libmnl) -I..
+CFLAGS+=-Wall  -Wfatal-errors $(shell pkg-config --cflags libmnl) -I..
 LDLIBS+=$(shell pkg-config --libs libmnl)
 
 .PHONY: all clean

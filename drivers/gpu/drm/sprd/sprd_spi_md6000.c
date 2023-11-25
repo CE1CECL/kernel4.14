@@ -178,7 +178,7 @@ void spi_md6000_resume(void)
 {
 	gpio_direction_output(139, 1);
 	gpio_free(139);
-	sprd_write_pa(0x3243c104,0x10,0xffffffff);
+//	sprd_write_pa(0x3243c104,0x10,0xffffffff);
 	gpiod_direction_output(md6000_rst_gpio, 1);
     mdelay(5);
 	gpiod_direction_output(md6000_rst_gpio, 0);
@@ -188,7 +188,7 @@ void spi_md6000_resume(void)
 
 void spi_md6000_suspend(void)
 {
-	sprd_write_pa(0x3243c104,0x30,0xffffffff);
+//	sprd_write_pa(0x3243c104,0x30,0xffffffff);
 	gpio_request(139, NULL);
 	gpio_direction_output(139, 0);
 	gpiod_direction_output(md6000_rst_gpio, 0);

@@ -76,8 +76,8 @@ void mdbg_assert_interface(char *str)
 {
 	int len = MDBG_ASSERT_SIZE;
 
-	if (unlikely(marlin_get_download_status() != true))
-		return;
+//	if (unlikely(marlin_get_download_status() != true))
+//		return;
 
 	if (strlen(str) <= MDBG_ASSERT_SIZE)
 		len = strlen(str);
@@ -189,7 +189,7 @@ static int mdbg_at_cmd_read(int channel, struct mbuf_t *head,
 	WCN_INFO("at cmd read:%s\n",
 		(char *)(mdbg_proc->at_cmd.buf));
 	complete(&mdbg_proc->at_cmd.completed);
-	notify_at_cmd_finish(mdbg_proc->at_cmd.buf, mdbg_proc->at_cmd.rcv_len);
+//	notify_at_cmd_finish(mdbg_proc->at_cmd.buf, mdbg_proc->at_cmd.rcv_len);
 	sprdwcn_bus_push_list(channel, head, tail, num);
 
 	return 0;
